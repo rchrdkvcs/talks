@@ -5,3 +5,4 @@ dist
 *-export
 *.pdf
 **/public/assets/fonts
+.idea
