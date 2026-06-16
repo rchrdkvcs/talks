@@ -1,0 +1,42 @@
+{
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.28.1",
+  "scripts": {
+    "dev": "tsx scripts/talks.ts dev",
+    "build": "tsx scripts/talks.ts build",
+    "export": "tsx scripts/talks.ts export",
+    "new": "tsx scripts/talks.ts new",
+    "talks": "tsx scripts/talks.ts list",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@iconify/json": "catalog:",
+    "@slidev/cli": "catalog:",
+    "@slidev/client": "catalog:",
+    "@slidev/theme-default": "catalog:",
+    "@types/node": "catalog:",
+    "@types/prompts": "catalog:",
+    "@types/seedrandom": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-flat-gitignore": "catalog:",
+    "eslint-plugin-format": "catalog:",
+    "execa": "catalog:",
+    "fast-glob": "catalog:",
+    "playwright-chromium": "catalog:",
+    "prompts": "catalog:",
+    "rimraf": "catalog:",
+    "seedrandom": "catalog:",
+    "tinyexec": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "unocss": "catalog:",
+    "vite": "catalog:"
+  },
+  "resolutions": {
+    "@slidev/cli": "catalog:",
+    "@slidev/client": "catalog:"
+  }
+}

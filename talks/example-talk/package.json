@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "tsx ../../scripts/build.ts",
+    "export": "slidev export --per-slide --output ./example-talk.pdf"
+  }
+}
