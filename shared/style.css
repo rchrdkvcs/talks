@@ -1,19 +1,30 @@
 :root {
   --slidev-code-padding: 8px 10px;
-  --slidev-code-background: #16161680 !important;
+  --slidev-code-background: #ffffffd9 !important;
   --talk-space-sm: 0.75rem;
   --talk-space-md: 1.25rem;
   --talk-space-lg: 2rem;
   --talk-space-xl: 4rem;
-  --talk-text-muted: #d6d6d6;
-  --talk-border-subtle: #ffffff1f;
+  --talk-brand-blue: #0f53ff;
+  --talk-accent-coral: #ff6b5f;
+  --talk-surface: #ffffffd9;
+  --talk-surface-muted: #eef3ff;
+  --talk-text: #101828;
+  --talk-text-muted: #566579;
+  --talk-border-subtle: #c7d2e533;
+  --talk-shadow-soft: 0 18px 48px #24416f14;
 }
 
-.dark #slide-content {
-  background-color: #050505 !important;
+.light #slide-content,
+#slide-content {
+  background:
+    radial-gradient(circle at 12% 8%, #0f53ff12 0, transparent 24rem),
+    linear-gradient(135deg, #f8fbff 0%, #f6f0ff 48%, #fff7f3 100%) !important;
+  color: var(--talk-text);
 }
 
 .slidev-layout {
+  color: var(--talk-text);
   font-weight: 400;
 }
 
@@ -24,17 +35,23 @@
 }
 
 .slidev-layout a {
-  border-color: #8888;
+  color: var(--talk-brand-blue);
+  border-color: #0f53ff4d;
 }
 
 .slidev-code {
-  border: 1px solid #eee1;
-  backdrop-filter: blur(10px);
+  border: 1px solid #c7d2e5a6;
+  background: var(--slidev-code-background);
+  box-shadow: var(--talk-shadow-soft);
+  backdrop-filter: blur(14px);
 }
 
 .slidev-layout :not(pre) > code {
-  color: rgb(201, 158, 251);
-  background: #161616ee;
+  color: var(--talk-brand-blue);
+  background: #0f53ff12;
+  border: 1px solid #0f53ff24;
+  border-radius: 0.35rem;
+  padding: 0.08em 0.32em;
 }
 
 .slidev-vclick-target {

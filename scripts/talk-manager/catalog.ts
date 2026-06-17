@@ -135,19 +135,20 @@ export async function generateWebIndex(talks: Talk[]) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Talk Catalog</title>
   <style>
-    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #050505; color: #f5f5f5; }
-    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 20% 0%, #2a1746 0, transparent 34rem), #050505; }
+    :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #f8fbff; color: #101828; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 18% 0%, #0f53ff1c 0, transparent 34rem), radial-gradient(circle at 92% 12%, #ff6b5f24 0, transparent 28rem), linear-gradient(135deg, #f8fbff 0%, #f6f0ff 48%, #fff7f3 100%); }
     main { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0; }
     h1 { margin: 0 0 12px; font-size: clamp(2rem, 6vw, 4rem); line-height: 1; letter-spacing: 0; }
     .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 32px 0; }
-    button { border: 1px solid #ffffff24; border-radius: 8px; padding: 8px 12px; background: #ffffff10; color: inherit; cursor: pointer; }
-    button[aria-pressed="true"] { background: #ffffff; color: #050505; }
+    button { border: 1px solid #c7d2e5; border-radius: 8px; padding: 8px 12px; background: #ffffffbf; color: inherit; cursor: pointer; }
+    button[aria-pressed="true"] { background: #0f53ff; border-color: #0f53ff; color: #ffffff; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    article { border: 1px solid #ffffff18; border-radius: 8px; padding: 20px; background: #0d0d0dcc; }
+    article { border: 1px solid #c7d2e5a6; border-radius: 8px; padding: 20px; background: #ffffffd9; box-shadow: 0 18px 48px #24416f14; }
     h2 { margin: 0 0 8px; font-size: 1.25rem; letter-spacing: 0; }
-    p { color: #d4d4d4; line-height: 1.55; }
+    p { color: #566579; line-height: 1.55; }
     .meta, .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    span, a { border: 1px solid #ffffff18; border-radius: 999px; padding: 4px 8px; color: #e8e8e8; font-size: .875rem; text-decoration: none; }
+    span, a { border: 1px solid #c7d2e5a6; border-radius: 999px; padding: 4px 8px; color: #24416f; background: #ffffff99; font-size: .875rem; text-decoration: none; }
+    a { color: #0f53ff; }
   </style>
 </head>
 <body>

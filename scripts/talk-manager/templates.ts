@@ -20,7 +20,7 @@ export function frontmatterFor(metadata: TalkMetadata, template: TalkTemplate) {
     template,
     highlighter: 'shiki',
     css: 'unocss',
-    colorSchema: 'dark',
+    colorSchema: 'light',
     transition: 'fade-out',
     mdc: true,
     layout: 'cover',

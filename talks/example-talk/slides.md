@@ -9,7 +9,7 @@ description: "Minimal talk used to validate the personal Slidev talk manager."
 status: "ready"
 highlighter: shiki
 css: unocss
-colorSchema: dark
+colorSchema: light
 transition: fade-out
 mdc: true
 layout: cover

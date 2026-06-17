@@ -20,7 +20,13 @@ type Distribution
 const { currentSlideRoute } = useNav()
 const frontmatter = computed(() => (currentSlideRoute.value.meta?.slide as any)?.frontmatter || {})
 const distribution = computed(() => (frontmatter.value.glow || 'full') as Distribution)
-const opacity = computed(() => +(frontmatter.value.glowOpacity || 0.4))
+const featuredLayouts = new Set(['cover', 'intro', 'section'])
+const opacity = computed(() => {
+  if (frontmatter.value.glowOpacity !== undefined)
+    return +frontmatter.value.glowOpacity
+
+  return featuredLayouts.has(frontmatter.value.layout) ? 0.36 : 0.22
+})
 const hue = computed(() => +(frontmatter.value.glowHue || 0))
 const seed = computed(() => (frontmatter.value.glowSeed === 'false' || frontmatter.value.glowSeed === false)
   ? Date.now().toString()
@@ -147,7 +153,10 @@ const poly3 = usePoly(3)
 <style scoped>
 .shared-glow-background,
 .shared-glow-clip {
-  transition: all 2.5s ease;
+  transition:
+    clip-path 2.5s ease,
+    opacity 2.5s ease,
+    filter 2.5s ease;
 }
 
 .shared-glow-background {
@@ -157,6 +166,7 @@ const poly3 = usePoly(3)
   overflow: hidden;
   pointer-events: none;
   transform: translateZ(0);
+  mix-blend-mode: multiply;
 }
 
 .shared-glow-clip {
@@ -167,18 +177,14 @@ const poly3 = usePoly(3)
 }
 
 .shared-glow-primary {
-  background-image: linear-gradient(to right, #9440e3, rgb(255 255 255 / 0.1));
+  background-image: linear-gradient(120deg, #0f53ff, rgb(15 83 255 / 0.08) 58%, transparent);
 }
 
 .shared-glow-secondary {
-  background-image: linear-gradient(to left, #41d1ff, rgb(255 255 255 / 0.1));
+  background-image: linear-gradient(240deg, #ff6b5f, rgb(255 107 95 / 0.08) 60%, transparent);
 }
 
 .shared-glow-accent {
-  background-image: linear-gradient(to top, #dce354, rgb(255 255 255 / 0.1));
-}
-
-:global(.light) .shared-glow-clip {
-  opacity: 1 !important;
+  background-image: linear-gradient(to top, #8ee8ff, rgb(142 232 255 / 0.08) 62%, transparent);
 }
 </style>
