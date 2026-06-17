@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "example-talk",
+    "title": "Example Talk",
+    "description": "Minimal talk used to validate the personal Slidev talk manager.",
+    "status": "ready",
+    "date": "2026-06-16",
+    "lang": "fr",
+    "event": "Local rehearsal",
+    "speaker": null,
+    "venue": null,
+    "duration": null,
+    "tags": [],
+    "links": {
+      "slides": "/talks/example-talk/",
+      "pdf": "/artifacts/example-talk.pdf",
+      "source": "talks/example-talk/slides.md"
+    }
+  }
+]

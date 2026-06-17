@@ -8,6 +8,10 @@
     "export": "tsx scripts/talks.ts export",
     "new": "tsx scripts/talks.ts new",
     "talks": "tsx scripts/talks.ts list",
+    "validate": "tsx scripts/talks.ts validate",
+    "sync": "tsx scripts/talks.ts sync",
+    "catalog": "tsx scripts/talks.ts catalog",
+    "publish": "tsx scripts/talks.ts publish",
     "typecheck": "tsc --noEmit",
     "lint": "eslint ."
   },
@@ -33,7 +37,8 @@
     "tsx": "catalog:",
     "typescript": "catalog:",
     "unocss": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "yaml": "catalog:"
   },
   "resolutions": {
     "@slidev/cli": "catalog:",

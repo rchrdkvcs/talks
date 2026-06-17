@@ -1,10 +1,12 @@
 ---
 theme: default
 title: "Example Talk"
+slug: "example-talk"
 event: "Local rehearsal"
 date: "2026-06-16"
 lang: "fr"
 description: "Minimal talk used to validate the personal Slidev talk manager."
+status: "ready"
 highlighter: shiki
 css: unocss
 colorSchema: dark

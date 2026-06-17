@@ -1,6 +1,12 @@
 :root {
   --slidev-code-padding: 8px 10px;
   --slidev-code-background: #16161680 !important;
+  --talk-space-sm: 0.75rem;
+  --talk-space-md: 1.25rem;
+  --talk-space-lg: 2rem;
+  --talk-space-xl: 4rem;
+  --talk-text-muted: #d6d6d6;
+  --talk-border-subtle: #ffffff1f;
 }
 
 .dark #slide-content {
@@ -61,4 +67,47 @@
 .fade-out-leave-to {
   opacity: 0;
   filter: blur(5px);
+}
+
+.shared-slide-layout {
+  display: grid;
+  min-height: 100%;
+  padding: var(--talk-space-xl);
+}
+
+.shared-slide-content {
+  width: min(100%, 980px);
+}
+
+.shared-slide-layout-intro {
+  align-items: center;
+}
+
+.shared-slide-layout-section {
+  align-items: center;
+}
+
+.shared-slide-layout-section .shared-slide-content {
+  width: min(100%, 840px);
+}
+
+.shared-slide-layout-quote {
+  align-items: center;
+}
+
+.shared-slide-layout-quote blockquote {
+  margin: 0;
+  padding-left: var(--talk-space-lg);
+  border-left: 2px solid var(--talk-border-subtle);
+  color: var(--talk-text-muted);
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.shared-slide-layout-thanks {
+  align-items: end;
+}
+
+.shared-slide-layout-thanks .shared-slide-content {
+  padding-bottom: var(--talk-space-lg);
 }
