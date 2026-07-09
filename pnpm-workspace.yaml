@@ -6,3 +6,7 @@ packages:
 onlyBuiltDependencies:
   - esbuild
   - playwright-chromium
+
+allowBuilds:
+  esbuild: true
+  playwright-chromium: true
