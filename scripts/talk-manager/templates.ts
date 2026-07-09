@@ -23,6 +23,10 @@ export function frontmatterFor(metadata: TalkMetadata, template: TalkTemplate) {
     colorSchema: 'light',
     transition: 'fade-out',
     mdc: true,
+    fonts: {
+      sans: 'DM Sans',
+      serif: 'Bodoni Moda',
+    },
     layout: 'cover',
     glowSeed: metadata.slug,
   }
@@ -33,13 +37,26 @@ export function frontmatterFor(metadata: TalkMetadata, template: TalkTemplate) {
   }).replace(/\n([a-z][\w-]*): \n/g, '\n$1:\n')
 }
 
+// Presentation Identity — les blocs générés suivent le design language
+// documenté dans docs/adr/0003 : une idée par slide, hiérarchie par
+// opacité, révélations v-click, grilles icône → flèche → description,
+// chips translucides et séparateurs serif.
 export function slidesFor(metadata: TalkMetadata, template: TalkTemplate) {
   const cover = `---
 ${frontmatterFor(metadata, template)}---
 
+<div text-sm op50 tracking-widest uppercase mb-4>${metadata.event || 'Event to be announced'}</div>
+
 # ${metadata.title}
 
-${metadata.event || 'Event to be announced'}
+<div op50 text-xl mt-4>
+One-line promise of the talk.
+</div>
+
+<div mt-10 flex="~ gap-2 wrap">
+  <div class="chip"><div i-ph-sparkle-duotone text-blue-600 /> Topic A</div>
+  <div class="chip"><div i-ph-lightning-duotone text-amber-600 /> Topic B</div>
+</div>
 `
 
   const intro = `---
@@ -47,20 +64,66 @@ layout: intro
 glow: left
 ---
 
-# About
-
-- ${metadata.speaker || 'Speaker'}
-- ${metadata.venue || metadata.event || 'Context'}
+<div text-4xl>${metadata.speaker || 'Speaker'}</div>
+<div op50 text-xl mt-2>${metadata.venue || metadata.event || 'Context'}</div>
 `
 
-  const section = (title: string, body: string) => `---
-layout: section
-glow: center
+  const statement = (line: string, accent: string, support: string) => `---
+layout: center
+glow: bottom
+class: text-center
+---
+
+<div text-4xl leading-relaxed>
+${line} <span text-rose-600>${accent}</span>
+</div>
+
+<div op50 text-xl mt-6 v-click>
+${support}
+</div>
+`
+
+  const divider = (kicker: string, title: string, subtitle: string) => `---
+layout: center
+glow: left
+---
+
+<div flex="~ col gap-2 items-center" text-center>
+  <div op50 text-sm tracking-widest uppercase>${kicker}</div>
+  <div text-5xl class="module-word" mt2>${title}</div>
+  <div op50 text-xl mt3>${subtitle}</div>
+</div>
+`
+
+  const iconGrid = (title: string) => `---
+class: text-2xl
+glow: right
 ---
 
 # ${title}
 
-${body}
+<div grid="~ cols-[max-content_min-content_auto] items-center gap-x-10 gap-y-10" py10>
+  <div flex="~ gap-2 items-center" text-blue-600 v-click>
+    <div i-ph-magnifying-glass-duotone text-2xl />
+    <span>First point</span>
+  </div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div text-lg op75 v-after>supporting detail, kept short</div>
+
+  <div flex="~ gap-2 items-center" text-lime-600 v-click>
+    <div i-ph-rocket-launch-duotone text-2xl />
+    <span>Second point</span>
+  </div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div text-lg op75 v-after>supporting detail, kept short</div>
+
+  <div flex="~ gap-2 items-center" text-purple-600 v-click>
+    <div i-ph-arrows-clockwise-duotone text-2xl />
+    <span>Third point</span>
+  </div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div text-lg op75 v-after>supporting detail, kept short</div>
+</div>
 `
 
   const quote = `---
@@ -72,34 +135,40 @@ glow: right
 `
 
   const thanks = `---
-layout: thanks
+layout: center
 glow: top
+class: text-center
 ---
 
-# Thanks
+<h1 class="module-word" important-text-3em>Thanks</h1>
+
+<div op50 mt-4>${metadata.title}</div>
 `
 
   const bodies: Record<TalkTemplate, string[]> = {
     minimal: [
-      section('First Idea', 'Start shaping the narrative here.'),
+      statement('One idea per slide, with', 'one accent', 'Supporting line, revealed on click.'),
+      divider('Part 1', 'First Idea', 'Start shaping the narrative here'),
+      iconGrid('Key points'),
       thanks,
     ],
     conference: [
       intro,
-      section('Context', 'Set up the problem and why it matters.'),
-      section('Main Thread', 'Develop the core argument.'),
+      statement('Name the problem, then make it', 'concrete', 'Why it matters, revealed on click.'),
+      divider('Part 1', 'Context', 'Set up the problem and why it matters'),
+      iconGrid('Main thread'),
       quote,
       thanks,
     ],
     workshop: [
       intro,
-      section('Agenda', '1. Setup\n2. Exercise\n3. Review'),
-      section('Exercise', 'Add hands-on instructions and checkpoints here.'),
+      divider('Agenda', 'Hands-on', 'Setup · Exercise · Review'),
+      iconGrid('Exercise checkpoints'),
       thanks,
     ],
     internal: [
-      section('Status', 'Summarize the current state.'),
-      section('Decision', 'Name the recommendation or next step.'),
+      statement('Summarize the current state in', 'one line', 'The signal behind it, revealed on click.'),
+      iconGrid('Decision points'),
       thanks,
     ],
   }

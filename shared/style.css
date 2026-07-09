@@ -28,10 +28,15 @@
   font-weight: 400;
 }
 
-.slidev-layout h1,
+.slidev-layout h1 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
 .slidev-layout h2,
 .slidev-layout h3 {
-  letter-spacing: 0;
+  font-weight: 550;
+  letter-spacing: -0.01em;
 }
 
 .slidev-layout a {
@@ -127,4 +132,29 @@
 
 .shared-slide-layout-thanks .shared-slide-content {
   padding-bottom: var(--talk-space-lg);
+}
+
+/* -----------------------------------------------------------------------
+ * Presentation Identity — design language (voir docs/adr/0003)
+ * Une idée par slide, hiérarchie par opacité (op50/op75), révélations
+ * v-click, grilles icône → flèche → description, chips, séparateurs serif.
+ * -------------------------------------------------------------------- */
+
+/* Chip translucide — outils, étapes de flux, badges */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 0.5rem;
+  background: rgb(136 136 136 / 0.12);
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+/* Grand mot serif — séparateurs de section, accents typographiques */
+.module-word {
+  font-family: ui-serif, 'Bodoni Moda', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }

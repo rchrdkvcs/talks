@@ -12,84 +12,86 @@ css: unocss
 colorSchema: light
 transition: fade-out
 mdc: true
+fonts:
+  sans: DM Sans
+  serif: Bodoni Moda
 layout: cover
 glowSeed: "example-talk"
 ---
 
-# Base complete Slidev
+<div text-sm op50 tracking-widest uppercase mb-4>Local rehearsal · 16 juin 2026 · Français</div>
 
-Une presentation de reference avec texte, image, tableau, graphique, code, timeline et slides de synthese.
+# Base complète Slidev
 
-<div class="mt-10 text-sm opacity-70">
-Local rehearsal · 16 juin 2026 · Francais
+<div op50 text-xl mt-4>
+Une présentation de référence : texte, image, tableau, graphique, code et synthèse.
+</div>
+
+<div mt-10 flex="~ gap-2 wrap">
+  <div class="chip"><div i-ph-text-aa-duotone text-blue-600 /> Texte</div>
+  <div class="chip"><div i-ph-image-duotone text-lime-600 /> Image</div>
+  <div class="chip"><div i-ph-chart-line-up-duotone text-amber-600 /> Données</div>
+  <div class="chip"><div i-ph-code-duotone text-purple-600 /> Code</div>
 </div>
 
 <!--
-Objectif: disposer d'une base plus riche qu'un deck minimal, facile a adapter pour une vraie conference.
+Objectif: disposer d'une base plus riche qu'un deck minimal, facile à adapter pour une vraie conférence.
 -->
 
 ---
 layout: center
 glow: bottom
+class: text-center
 ---
 
-# Le message
+<div text-4xl leading-relaxed>
+Une bonne présentation organise<br>une <span text-rose-600>progression</span>
+</div>
 
-Une bonne presentation ne se contente pas d'empiler des slides : elle organise une progression.
-
-<div class="grid grid-cols-3 gap-4 mt-10">
-  <div class="rounded-lg bg-white/70 border border-slate-200 p-5 shadow-sm">
-    <div class="text-sm uppercase tracking-wide opacity-55">1</div>
-    <h3 class="mt-2 mb-1">Contexte</h3>
-    <p class="text-sm opacity-75">Pourquoi le sujet compte maintenant.</p>
-  </div>
-  <div class="rounded-lg bg-white/70 border border-slate-200 p-5 shadow-sm">
-    <div class="text-sm uppercase tracking-wide opacity-55">2</div>
-    <h3 class="mt-2 mb-1">Tension</h3>
-    <p class="text-sm opacity-75">Ce qui bloque, coute, ralentit ou complique.</p>
-  </div>
-  <div class="rounded-lg bg-white/70 border border-slate-200 p-5 shadow-sm">
-    <div class="text-sm uppercase tracking-wide opacity-55">3</div>
-    <h3 class="mt-2 mb-1">Resolution</h3>
-    <p class="text-sm opacity-75">La proposition et son impact concret.</p>
-  </div>
+<div op50 text-xl mt-6 v-click>
+Elle ne se contente pas d'empiler des slides.
 </div>
 
 ---
-layout: default
+class: text-2xl
 glow: right
 ---
 
-# Agenda
+# Le fil narratif
 
-<div class="grid grid-cols-[1fr_2fr] gap-10 mt-8 items-start">
-  <div>
-    <p class="text-lg opacity-75">Une structure simple pour tester plusieurs formes de contenu sans repartir de zero.</p>
+<div grid="~ cols-[max-content_min-content_auto] items-center gap-x-10 gap-y-10" py10>
+  <div flex="~ gap-2 items-center" text-blue-600 v-click>
+    <div i-ph-compass-duotone text-2xl />
+    <span>Contexte</span>
   </div>
-  <div class="space-y-4">
-    <div v-click class="flex gap-4 items-start">
-      <div class="text-blue-600 font-bold">01</div>
-      <div><strong>Installer le contexte</strong><br><span class="opacity-65">Probleme, audience, enjeux.</span></div>
-    </div>
-    <div v-click class="flex gap-4 items-start">
-      <div class="text-blue-600 font-bold">02</div>
-      <div><strong>Montrer la matiere</strong><br><span class="opacity-65">Photo, chiffres, tableau, schema.</span></div>
-    </div>
-    <div v-click class="flex gap-4 items-start">
-      <div class="text-blue-600 font-bold">03</div>
-      <div><strong>Rendre l'idee actionnable</strong><br><span class="opacity-65">Processus, code, decisions, suite.</span></div>
-    </div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div text-lg op75 v-after>pourquoi le sujet compte maintenant</div>
+
+  <div flex="~ gap-2 items-center" text-amber-600 v-click>
+    <div i-ph-lightning-duotone text-2xl />
+    <span>Tension</span>
   </div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div text-lg op75 v-after>ce qui bloque, coûte, ralentit ou complique</div>
+
+  <div flex="~ gap-2 items-center" text-lime-600 v-click>
+    <div i-ph-check-circle-duotone text-2xl />
+    <span>Résolution</span>
+  </div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div text-lg op75 v-after>la proposition et son impact concret</div>
 </div>
 
 ---
-layout: section
+layout: center
 glow: left
 ---
 
-# 1. Contexte
-
-Partir du probleme avant de parler de solution.
+<div flex="~ col gap-2 items-center" text-center>
+  <div op50 text-sm tracking-widest uppercase>Partie 1</div>
+  <div text-5xl class="module-word" mt2>Contexte</div>
+  <div op50 text-xl mt3>Partir du problème avant de parler de solution</div>
+</div>
 
 ---
 layout: image-right
@@ -97,17 +99,19 @@ image: https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&
 glow: top
 ---
 
-# Une situation concrete
+# Une situation concrète
 
-Les equipes produisent souvent plusieurs types de contenus pour expliquer une meme idee.
+<div op50 text-lg mt-2>Les équipes produisent plusieurs types de contenus pour expliquer une même idée.</div>
 
-- Des messages courts pour cadrer
-- Des preuves visuelles pour ancrer
-- Des donnees pour objectiver
-- Des exemples pour rendre la suite executable
+<div flex="~ col gap-4" mt-8 text-lg>
+  <div flex="~ gap-2 items-center" v-click><div i-ph-chat-circle-text-duotone text-blue-600 /> des messages courts pour cadrer</div>
+  <div flex="~ gap-2 items-center" v-click><div i-ph-image-duotone text-lime-600 /> des preuves visuelles pour ancrer</div>
+  <div flex="~ gap-2 items-center" v-click><div i-ph-chart-bar-duotone text-amber-600 /> des données pour objectiver</div>
+  <div flex="~ gap-2 items-center" v-click><div i-ph-play-circle-duotone text-purple-600 /> des exemples pour rendre la suite exécutable</div>
+</div>
 
-<div class="mt-8 text-sm opacity-60">
-Photo: espace de travail collaboratif, Unsplash.
+<div mt-8 text-sm op50>
+Photo : espace de travail collaboratif, Unsplash.
 </div>
 
 <!--
@@ -115,65 +119,61 @@ Utiliser cette slide pour poser une situation reconnaissable par l'audience.
 -->
 
 ---
-layout: two-cols-header
+layout: none
+class: h-full
 glow: bottom
 ---
 
-# Deux facons de raconter
+<div h-full grid="~ rows-2">
 
-::left::
+<div p14>
+  <h2 text-3xl mb-2>Centrée outil</h2>
+  <div text-xl text-rose-600 v-click="1">une liste de fonctionnalités</div>
+  <div mt-3 op75 text-lg v-click="2">beaucoup de détail, peu de hiérarchie — difficile à retenir</div>
+</div>
 
-## Centree outil
-
-- Liste de fonctionnalites
-- Beaucoup de detail
-- Peu de hierarchie
-- Difficile a retenir
-
-::right::
-
-## Centree decision
-
-- Probleme explicite
-- Critere de choix
-- Exemple observable
-- Prochaine action claire
+<div p14 border="t gray-400/20">
+  <h2 text-3xl mb-2>Centrée décision</h2>
+  <div text-xl text-lime-600 v-click="3">un problème explicite, un critère de choix</div>
+  <div mt-3 op75 text-lg v-click="4">un exemple observable, une prochaine action claire</div>
+</div>
+</div>
 
 ---
-layout: default
 glow: right
 ---
 
-# Signaux a observer
+# Signaux à observer
 
 | Signal | Question | Exemple de preuve |
 |---|---|---|
 | Adoption | Qui utilise vraiment la solution ? | Sessions actives, retours terrain |
-| Qualite | Le resultat est-il fiable ? | Taux d'erreur, revue humaine |
-| Vitesse | Le delai baisse-t-il ? | Temps de cycle, temps de build |
-| Confiance | L'equipe ose-t-elle s'en servir ? | Decisions prises sans escalation |
+| Qualité | Le résultat est-il fiable ? | Taux d'erreur, revue humaine |
+| Vitesse | Le délai baisse-t-il ? | Temps de cycle, temps de build |
+| Confiance | L'équipe ose-t-elle s'en servir ? | Décisions prises sans escalade |
 
-<div class="mt-6 text-sm opacity-65">
-Un tableau fonctionne bien quand il compare peu de criteres, mais les compare vraiment.
+<div mt-6 text-sm op50>
+Un tableau fonctionne bien quand il compare peu de critères, mais les compare vraiment.
 </div>
 
 ---
-layout: section
+layout: center
 glow: right
 ---
 
-# 2. Donnees et visualisation
-
-Passer de l'opinion a une lecture partagee.
+<div flex="~ col gap-2 items-center" text-center>
+  <div op50 text-sm tracking-widest uppercase>Partie 2</div>
+  <div text-5xl class="module-word" mt2>Données & visualisation</div>
+  <div op50 text-xl mt3>Passer de l'opinion à une lecture partagée</div>
+</div>
 
 ---
-layout: default
 glow: top
 ---
 
 # Graphique Mermaid
 
-```mermaid
+```mermaid {scale: 0.45}
 xychart-beta
   title "Temps de cycle moyen"
   x-axis ["Jan", "Fev", "Mar", "Avr", "Mai", "Juin"]
@@ -182,19 +182,18 @@ xychart-beta
   bar [3, 4, 4, 5, 7, 8]
 ```
 
-<div class="grid grid-cols-2 gap-6 mt-8">
-  <div>
-    <h3 class="mb-1">Lecture</h3>
-    <p class="opacity-75">Le temps de cycle diminue pendant que le nombre de livraisons augmente.</p>
+<div grid="~ cols-2 gap-12" mt-6 text-lg>
+  <div v-click>
+    <div text-lime-600>Lecture</div>
+    <div op50 text-base mt1>le temps de cycle diminue pendant que les livraisons augmentent</div>
   </div>
-  <div>
-    <h3 class="mb-1">Attention</h3>
-    <p class="opacity-75">Un graphique ne suffit pas : il faut aussi dire ce que l'on decide a partir de lui.</p>
+  <div v-click>
+    <div text-amber-600>Attention</div>
+    <div op50 text-base mt1>un graphique ne suffit pas : dire ce que l'on décide à partir de lui</div>
   </div>
 </div>
 
 ---
-layout: default
 glow: left
 ---
 
@@ -210,52 +209,58 @@ flowchart LR
   F --> B
 ```
 
-<div class="mt-8 rounded-lg bg-white/70 border border-slate-200 p-5">
-Un schema est utile quand il rend visibles les boucles, les criteres d'arret et les responsabilites.
+<div mt-8 op50 text-lg v-click>
+Un schéma est utile quand il rend visibles les boucles, les critères d'arrêt et les responsabilités.
 </div>
 
 ---
-layout: default
 glow: bottom
 ---
 
 # Timeline
 
-<div class="relative mt-10 pl-8 border-l-2 border-blue-500/30 space-y-8">
-  <div v-click>
-    <div class="absolute -left-2.5 w-5 h-5 rounded-full bg-blue-600"></div>
-    <h3 class="mb-1">Semaine 1 · Cadrage</h3>
-    <p class="opacity-70">Aligner audience, probleme et definition du succes.</p>
+<div flex="~ col gap-9" mt-12 text-xl>
+  <div flex="~ gap-4 items-start" v-click>
+    <div i-ph-number-circle-one-duotone text-blue-600 text-3xl flex-none />
+    <div>
+      <div>Semaine 1 · Cadrage</div>
+      <div op50 text-base mt1>aligner audience, problème et définition du succès</div>
+    </div>
   </div>
-  <div v-click>
-    <div class="absolute -left-2.5 w-5 h-5 rounded-full bg-coral-500"></div>
-    <h3 class="mb-1">Semaine 2 · Prototype</h3>
-    <p class="opacity-70">Construire juste assez pour tester la comprehension.</p>
+  <div flex="~ gap-4 items-start" v-click>
+    <div i-ph-number-circle-two-duotone text-lime-600 text-3xl flex-none />
+    <div>
+      <div>Semaine 2 · Prototype</div>
+      <div op50 text-base mt1>construire juste assez pour tester la compréhension</div>
+    </div>
   </div>
-  <div v-click>
-    <div class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500"></div>
-    <h3 class="mb-1">Semaine 3 · Decision</h3>
-    <p class="opacity-70">Comparer les signaux et choisir la suite.</p>
+  <div flex="~ gap-4 items-start" v-click>
+    <div i-ph-number-circle-three-duotone text-purple-600 text-3xl flex-none />
+    <div>
+      <div>Semaine 3 · Décision</div>
+      <div op50 text-base mt1>comparer les signaux et choisir la suite</div>
+    </div>
   </div>
 </div>
 
 ---
-layout: section
-glow: bottom
+layout: center
+glow: left
 ---
 
-# 3. Exemples actionnables
-
-Montrer comment l'idee se transforme en travail concret.
+<div flex="~ col gap-2 items-center" text-center>
+  <div op50 text-sm tracking-widest uppercase>Partie 3</div>
+  <div text-5xl class="module-word" mt2>Exemples actionnables</div>
+  <div op50 text-xl mt3>Transformer l'idée en travail concret</div>
+</div>
 
 ---
-layout: default
 glow: left
 ---
 
 # Exemple de code
 
-```ts {all|1-7|9-16|18-22}
+```ts {all|1-7|9-16|18-22|all}
 type TalkSignal = {
   adoption: number
   quality: number
@@ -280,31 +285,24 @@ const decision = score({
 })
 ```
 
-<div class="mt-5 text-sm opacity-65">
-Les zones surlignees permettent d'expliquer progressivement sans changer de slide.
+<div mt-5 text-sm op50>
+Les zones surlignées permettent d'expliquer progressivement sans changer de slide.
 </div>
 
 ---
-layout: default
+layout: center
 glow: right
+class: text-center
 ---
 
-# Bloc de decision
+<div op50 text-lg mb-2>La décision</div>
 
-<div class="grid grid-cols-2 gap-6 mt-8">
-  <div class="rounded-lg bg-white/75 border border-slate-200 p-6">
-    <h3>Decision</h3>
-    <p class="text-2xl font-semibold mt-3">Passer en beta privee</p>
-    <p class="opacity-70 mt-3">Le signal est suffisant pour tester avec un public limite.</p>
-  </div>
-  <div class="rounded-lg bg-white/75 border border-slate-200 p-6">
-    <h3>Garde-fous</h3>
-    <ul class="mt-3">
-      <li>Limiter a 20 utilisateurs</li>
-      <li>Mesurer les echecs critiques</li>
-      <li>Prevoir une sortie manuelle</li>
-    </ul>
-  </div>
+<div text-4xl>Passer en <span class="module-word" text-rose-600>bêta privée</span></div>
+
+<div mt-10 flex="~ gap-3 items-center justify-center wrap" text-lg>
+  <div class="chip" v-click><div i-ph-users-three-duotone text-blue-600 /> 20 utilisateurs max</div>
+  <div class="chip" v-click><div i-ph-warning-circle-duotone text-amber-600 /> mesurer les échecs critiques</div>
+  <div class="chip" v-click><div i-ph-hand-palm-duotone text-rose-600 /> sortie manuelle prévue</div>
 </div>
 
 ---
@@ -312,41 +310,31 @@ layout: quote
 glow: top
 ---
 
-> Une slide doit reduire l'effort de comprehension, pas prouver que le sujet est complexe.
+> Une slide doit réduire l'effort de compréhension, pas prouver que le sujet est complexe.
 
-<div class="mt-6 text-sm opacity-60">Principe de conception pour cette base.</div>
+<div mt-6 text-sm op50>Principe de conception pour cette base.</div>
 
 ---
-layout: default
+layout: center
 glow: bottom
+class: text-center
 ---
 
-# Checklist finale
+<div op50 text-lg mb-8>Checklist finale</div>
 
-<div class="grid grid-cols-2 gap-x-10 gap-y-5 mt-8">
-  <div v-click class="flex gap-3">
-    <div class="text-emerald-600 font-bold">✓</div>
-    <div><strong>Un fil narratif</strong><br><span class="opacity-65">Contexte, tension, resolution.</span></div>
-  </div>
-  <div v-click class="flex gap-3">
-    <div class="text-emerald-600 font-bold">✓</div>
-    <div><strong>Des formats varies</strong><br><span class="opacity-65">Image, tableau, graphique, schema, code.</span></div>
-  </div>
-  <div v-click class="flex gap-3">
-    <div class="text-emerald-600 font-bold">✓</div>
-    <div><strong>Des preuves lisibles</strong><br><span class="opacity-65">Peu de chiffres, mais bien interpretes.</span></div>
-  </div>
-  <div v-click class="flex gap-3">
-    <div class="text-emerald-600 font-bold">✓</div>
-    <div><strong>Une prochaine action</strong><br><span class="opacity-65">Ce que l'audience peut faire juste apres.</span></div>
-  </div>
+<div flex="~ col gap-5 items-start" text-2xl mx-auto w-max>
+  <div v-click>un fil narratif <span op30>→</span> <span op50 text-lg>contexte, tension, résolution</span></div>
+  <div v-click>des formats variés <span op30>→</span> <span op50 text-lg>image, tableau, graphique, code</span></div>
+  <div v-click>des preuves lisibles <span op30>→</span> <span op50 text-lg>peu de chiffres, bien interprétés</span></div>
+  <div v-click>une prochaine action <span op30>→</span> <span op50 text-lg>ce que l'audience fait juste après</span></div>
 </div>
 
 ---
-layout: end
+layout: center
 glow: top
+class: text-center
 ---
 
-# Merci
+<h1 class="module-word" important-text-3em>Merci</h1>
 
-Questions, remarques, objections.
+<div op50 mt-4>Questions, remarques, objections.</div>

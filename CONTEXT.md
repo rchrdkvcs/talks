@@ -13,8 +13,8 @@ The reusable identity, layouts, and presentation conventions shared across Talks
 _Avoid_: Global talk content, shared talk-specific components
 
 **Presentation Identity**:
-The visual and interaction style shared by Talks: minimal composition, clean typography, and subtle animated backgrounds.
-_Avoid_: Upstream personal branding, content-specific decoration
+The visual and interaction style shared by Talks: one idea per slide, opacity-based text hierarchy, progressive reveals, icon-led grids, translucent chips, and serif section dividers on a light background with subtle animated glows (see docs/adr/0003).
+_Avoid_: Upstream personal branding, content-specific decoration, boxed card layouts
 
 **Talk Slug**:
 A stable, human-readable identifier for a specific published edition of a Talk.
