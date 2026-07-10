@@ -14,6 +14,12 @@
       "port": 3033
     },
     {
+      "name": "wrangler-dist",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["wrangler", "dev", "--port", "8788"],
+      "port": 8788
+    },
+    {
       "name": "example-talk-slides",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["--dir", "talks/example-talk", "exec", "slidev", "--port", "3032"],

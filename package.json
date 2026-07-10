@@ -18,8 +18,8 @@
   "devDependencies": {
     "@antfu/eslint-config": "^9.1.0",
     "@iconify/json": "^2.2.497",
-    "@slidev/cli": "^52.16.0",
-    "@slidev/client": "^52.16.0",
+    "@slidev/cli": "^52.17.0",
+    "@slidev/client": "^52.17.0",
     "@slidev/theme-default": "^0.25.0",
     "@types/node": "^26.1.1",
     "@types/prompts": "^2.4.9",
