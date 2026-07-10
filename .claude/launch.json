@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fyc-slides",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "talks/fyc", "exec", "slidev", "--port", "3031"],
+      "port": 3031
+    },
+    {
+      "name": "fyc-validation-slides",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "talks/fyc-validation", "exec", "slidev", "--port", "3033"],
+      "port": 3033
+    },
+    {
+      "name": "example-talk-slides",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "talks/example-talk", "exec", "slidev", "--port", "3032"],
+      "port": 3032
+    }
+  ]
+}
