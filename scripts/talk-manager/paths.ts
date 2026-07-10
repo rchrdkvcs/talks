@@ -15,11 +15,11 @@ export function talkSlidesPath(slug: string) {
 }
 
 export function talkPublicBase(slug: string) {
-  return `/talks/${slug}/`
+  return `/${slug}/`
 }
 
 export function talkBuildOutput(slug: string) {
-  return resolve(distDir, 'talks', slug)
+  return resolve(distDir, slug)
 }
 
 export function talkPdfPath(slug: string) {

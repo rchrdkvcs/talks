@@ -2,14 +2,27 @@
 
 Generated from Talk Metadata. Run `pnpm sync` to refresh.
 
-## Example Talk
+## Ingénierie des Infrastructures Web & Cloud — Validation du sujet
+
+- Slug: fyc-validation
+- Status: ready
+- Date: 2026-07-10
+- Language: fr
+- Event: FYC
+- Tags: cloud, formation, infrastructure, web
+- Slides: /fyc-validation/
+- PDF: /artifacts/fyc-validation.pdf
+
+Pitch de validation du sujet de la formation Ingénierie des Infrastructures Web & Cloud.
+
+## Base complete Slidev
 
 - Slug: example-talk
 - Status: ready
 - Date: 2026-06-16
 - Language: fr
 - Event: Local rehearsal
-- Slides: /talks/example-talk/
+- Slides: /example-talk/
 - PDF: /artifacts/example-talk.pdf
 
-Minimal talk used to validate the personal Slidev talk manager.
+Deck de reference montrant plusieurs types de slides, contenus, medias et visualisations.

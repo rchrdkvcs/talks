@@ -1,8 +1,31 @@
 [
   {
+    "slug": "fyc-validation",
+    "title": "Ingénierie des Infrastructures Web & Cloud — Validation du sujet",
+    "description": "Pitch de validation du sujet de la formation Ingénierie des Infrastructures Web & Cloud.",
+    "status": "ready",
+    "date": "2026-07-10",
+    "lang": "fr",
+    "event": "FYC",
+    "speaker": null,
+    "venue": null,
+    "duration": null,
+    "tags": [
+      "cloud",
+      "formation",
+      "infrastructure",
+      "web"
+    ],
+    "links": {
+      "slides": "/fyc-validation/",
+      "pdf": "/artifacts/fyc-validation.pdf",
+      "source": "talks/fyc-validation/slides.md"
+    }
+  },
+  {
     "slug": "example-talk",
-    "title": "Example Talk",
-    "description": "Minimal talk used to validate the personal Slidev talk manager.",
+    "title": "Base complete Slidev",
+    "description": "Deck de reference montrant plusieurs types de slides, contenus, medias et visualisations.",
     "status": "ready",
     "date": "2026-06-16",
     "lang": "fr",
@@ -12,7 +35,7 @@
     "duration": null,
     "tags": [],
     "links": {
-      "slides": "/talks/example-talk/",
+      "slides": "/example-talk/",
       "pdf": "/artifacts/example-talk.pdf",
       "source": "talks/example-talk/slides.md"
     }

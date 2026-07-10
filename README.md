@@ -44,5 +44,5 @@ pnpm new my-talk-slug --title "My Talk" --event "My Event" --date 2026-11-06 --l
 - `package.json` inside a talk stays focused on technical scripts.
 - Shared identity and layouts live in `shared`.
 - Talk-specific components and media stay inside their talk folder.
-- Public paths are derived as `/talks/{talk-slug}/`.
+- Public paths are derived as `/{talk-slug}/`.
 - PDF artifacts are exported to `dist/artifacts/{talk-slug}.pdf`.

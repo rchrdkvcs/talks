@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "talks",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-07-10",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
+}
