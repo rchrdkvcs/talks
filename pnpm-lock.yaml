@@ -82,6 +82,8 @@ importers:
 
   talks/fyc: {}
 
+  talks/fyc-validation: {}
+
 packages:
 
   '@antfu/eslint-config@9.1.0':

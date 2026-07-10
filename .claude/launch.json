@@ -8,6 +8,12 @@
       "port": 3031
     },
     {
+      "name": "fyc-validation-slides",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "talks/fyc-validation", "exec", "slidev", "--port", "3033"],
+      "port": 3033
+    },
+    {
       "name": "example-talk-slides",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["--dir", "talks/example-talk", "exec", "slidev", "--port", "3032"],
