@@ -2,6 +2,19 @@
 
 Generated from Talk Metadata. Run `pnpm sync` to refresh.
 
+## Losyma — architecture d’un webmail Symfony
+
+- Slug: losyma
+- Status: ready
+- Date: 2026-07-29
+- Language: fr
+- Event: Framework Symfony · ESGI 4
+- Tags: doctrine, mercure, symfony, twig
+- Slides: /losyma/
+- PDF: /artifacts/losyma.pdf
+
+Architecture technique d’un webmail interne construit avec Symfony, Twig, Doctrine et Mercure.
+
 ## Ingénierie des Infrastructures Web & Cloud — Validation du sujet
 
 - Slug: fyc-validation

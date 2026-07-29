@@ -1,5 +1,28 @@
 [
   {
+    "slug": "losyma",
+    "title": "Losyma — architecture d’un webmail Symfony",
+    "description": "Architecture technique d’un webmail interne construit avec Symfony, Twig, Doctrine et Mercure.",
+    "status": "ready",
+    "date": "2026-07-29",
+    "lang": "fr",
+    "event": "Framework Symfony · ESGI 4",
+    "speaker": null,
+    "venue": null,
+    "duration": null,
+    "tags": [
+      "doctrine",
+      "mercure",
+      "symfony",
+      "twig"
+    ],
+    "links": {
+      "slides": "/losyma/",
+      "pdf": "/artifacts/losyma.pdf",
+      "source": "talks/losyma/slides.md"
+    }
+  },
+  {
     "slug": "fyc-validation",
     "title": "Ingénierie des Infrastructures Web & Cloud — Validation du sujet",
     "description": "Pitch de validation du sujet de la formation Ingénierie des Infrastructures Web & Cloud.",

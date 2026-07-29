@@ -84,6 +84,8 @@ importers:
 
   talks/fyc-validation: {}
 
+  talks/losyma: {}
+
 packages:
 
   '@antfu/eslint-config@9.1.0':
