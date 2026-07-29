@@ -129,70 +129,119 @@ export async function generateWebIndex(talks: Talk[]) {
 
   await fs.mkdir(distDir, { recursive: true })
   await fs.writeFile(resolve(distDir, 'index.html'), `<!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Talk Catalog</title>
+  <meta name="description" content="Présentations, conférences et supports de Richard Kovacs.">
+  <title>Présentations — Richard Kovacs</title>
   <style>
-    :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #f8fbff; color: #101828; }
-    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 18% 0%, #0f53ff1c 0, transparent 34rem), radial-gradient(circle at 92% 12%, #ff6b5f24 0, transparent 28rem), linear-gradient(135deg, #f8fbff 0%, #f6f0ff 48%, #fff7f3 100%); }
-    main { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0; }
-    h1 { margin: 0 0 12px; font-size: clamp(2rem, 6vw, 4rem); line-height: 1; letter-spacing: 0; }
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 32px 0; }
-    button { border: 1px solid #c7d2e5; border-radius: 8px; padding: 8px 12px; background: #ffffffbf; color: inherit; cursor: pointer; }
-    button[aria-pressed="true"] { background: #0f53ff; border-color: #0f53ff; color: #ffffff; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    article { border: 1px solid #c7d2e5a6; border-radius: 8px; padding: 20px; background: #ffffffd9; box-shadow: 0 18px 48px #24416f14; }
-    h2 { margin: 0 0 8px; font-size: 1.25rem; letter-spacing: 0; }
-    p { color: #566579; line-height: 1.55; }
-    .meta, .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    span, a { border: 1px solid #c7d2e5a6; border-radius: 999px; padding: 4px 8px; color: #24416f; background: #ffffff99; font-size: .875rem; text-decoration: none; }
-    a { color: #0f53ff; }
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      color: #171717;
+      background: #f5f5f2;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; }
+    a { color: inherit; }
+    button, select { font: inherit; }
+    [hidden] { display: none !important; }
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 64px 0 112px; }
+    .intro { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; padding-bottom: 34px; border-bottom: 1px solid #d9d9d4; }
+    .eyebrow { margin: 0 0 12px; color: #666; font-size: .75rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(2.6rem, 7vw, 6.5rem); font-weight: 520; letter-spacing: -.065em; line-height: .92; }
+    .intro-copy { max-width: 360px; margin: 22px 0 0; color: #666; line-height: 1.55; }
+    .filter { min-width: 210px; padding: 10px 34px 10px 12px; border: 1px solid #d2d2cc; border-radius: 7px; color: #333; background: #fafaf8; }
+    .catalog { padding-top: 28px; }
+    .catalog-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+    .catalog-heading h2 { margin: 0; font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; }
+    .count { color: #888; font-size: .78rem; }
+    .talk-title { margin: 0; letter-spacing: -.025em; line-height: 1.08; }
+    .talk-description { color: #666; line-height: 1.55; }
+    .talk-meta { color: #777; font-size: .76rem; letter-spacing: .02em; text-transform: uppercase; }
+    .talk-links { display: flex; gap: 16px; }
+    .talk-links a { font-size: .82rem; font-weight: 650; text-underline-offset: 4px; }
+    .talk-links a:first-child { text-decoration: none; }
+    .talk-links a:first-child::after { content: " ↗"; }
+
+    .library-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .library-talk { min-width: 0; }
+    .library-cover { display: flex; aspect-ratio: 4 / 3; padding: 24px; align-items: flex-end; margin-bottom: 16px; border: 1px solid #d4d4cf; border-radius: 3px; text-decoration: none; background: #e9e9e4; transition: transform 160ms ease, background 160ms ease; }
+    .library-talk:nth-child(2n) .library-cover { background: #deded8; }
+    .library-talk:nth-child(3n) .library-cover { background: #ece9e3; }
+    .library-cover:hover { transform: translateY(-3px); background: #171717; color: white; }
+    .library-cover span { max-width: 95%; font-size: clamp(1.4rem, 2.35vw, 2.25rem); font-weight: 540; letter-spacing: -.045em; line-height: 1; }
+    .library-details { display: grid; grid-template-columns: 1fr auto; gap: 14px; }
+    .library-details .talk-description { margin: 9px 0 16px; font-size: .9rem; }
+
+    @media (max-width: 800px) {
+      .shell { width: min(100% - 28px, 1180px); padding-top: 34px; }
+      .intro { grid-template-columns: 1fr; }
+      .filter { width: 100%; }
+      .library-grid { grid-template-columns: 1fr; }
+      .library-grid { gap: 40px; }
+    }
   </style>
-</head>
+  </head>
 <body>
-  <main>
-    <h1>Talk Catalog</h1>
-    <p>Presentations generated from repository Talk Metadata.</p>
-    <div class="filters" aria-label="Filters">
-      <button type="button" data-filter="all" aria-pressed="true">All</button>
-      ${languages.map(lang => `<button type="button" data-lang="${lang}" aria-pressed="false">${lang}</button>`).join('\n      ')}
-      ${tags.map(tag => `<button type="button" data-tag="${tag}" aria-pressed="false">${tag}</button>`).join('\n      ')}
+  <main class="shell">
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Présentations</p>
+        <h1>Idées, systèmes<br>et retours d’expérience.</h1>
+        <p class="intro-copy">Une sélection de supports autour du web, de l’architecture logicielle et de l’infrastructure.</p>
+      </div>
+      <label>
+        <span class="eyebrow">Filtrer</span>
+        <select class="filter" id="catalog-filter">
+          <option value="all">Toutes les présentations</option>
+          ${languages.map(lang => `<option value="lang:${lang}">Langue · ${lang.toUpperCase()}</option>`).join('\n          ')}
+          ${tags.map(tag => `<option value="tag:${tag}">Sujet · ${tag}</option>`).join('\n          ')}
+        </select>
+      </label>
     </div>
-    <section class="grid">
-      ${data.map(talk => `<article data-lang="${talk.lang}" data-tags="${talk.tags.join(' ')}">
-        <h2>${talk.title}</h2>
-        <p>${talk.description}</p>
-        <div class="meta">
-          <span>${talk.status}</span>
-          <span>${talk.date}</span>
-          <span>${talk.lang}</span>
-          ${talk.event ? `<span>${talk.event}</span>` : ''}
-        </div>
-        <div class="links">
-          <a href="${talk.links.slides}">Slides</a>
-          <a href="${talk.links.pdf}">PDF</a>
-          <a href="${talk.links.source}">Source</a>
-        </div>
-      </article>`).join('\n      ')}
+
+    <section class="catalog">
+      <div class="catalog-heading">
+        <h2>Bibliothèque</h2>
+        <span class="count">${data.length} présentations</span>
+      </div>
+      <div class="library-grid">
+        ${data.map(talk => `<article class="library-talk" data-talk data-lang="${talk.lang}" data-tags="${talk.tags.join(' ')}">
+          <a class="library-cover" href="${talk.links.slides}">
+            <span>${talk.title}</span>
+          </a>
+          <div class="library-details">
+            <div>
+              <div class="talk-meta">${talk.date}${talk.event ? ` · ${talk.event}` : ''}</div>
+              <p class="talk-description">${talk.description}</p>
+              <div class="talk-links">
+                <a href="${talk.links.slides}">Voir</a>
+                <a href="${talk.links.pdf}">PDF</a>
+              </div>
+            </div>
+          </div>
+        </article>`).join('\n        ')}
+      </div>
     </section>
   </main>
+
   <script>
-    const buttons = [...document.querySelectorAll('button')]
-    const articles = [...document.querySelectorAll('article')]
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        buttons.forEach(item => item.setAttribute('aria-pressed', 'false'))
-        button.setAttribute('aria-pressed', 'true')
-        const lang = button.dataset.lang
-        const tag = button.dataset.tag
-        articles.forEach((article) => {
-          const visible = !lang && !tag || article.dataset.lang === lang || article.dataset.tags.split(' ').includes(tag)
-          article.hidden = !visible
-        })
+    const filter = document.querySelector('#catalog-filter')
+
+    function applyFilter() {
+      const [type, value] = filter.value.split(':')
+      document.querySelectorAll('[data-talk]').forEach((talk) => {
+        const visible = type === 'all'
+          || type === 'lang' && talk.dataset.lang === value
+          || type === 'tag' && talk.dataset.tags.split(' ').includes(value)
+        talk.hidden = !visible
       })
-    })
+    }
+
+    filter.addEventListener('change', applyFilter)
   </script>
 </body>
 </html>
