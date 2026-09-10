@@ -15,6 +15,19 @@ Generated from Talk Metadata. Run `pnpm sync` to refresh.
 
 Architecture technique d’un webmail interne construit avec Symfony, Twig, Doctrine et Mercure.
 
+## Ingénierie des Infrastructures Web & Cloud
+
+- Slug: fyc
+- Status: ready
+- Date: 2026-07-10
+- Language: fr
+- Event: Ingénierie des Infrastructures Web & Cloud
+- Tags: cloud, formation, infrastructure, web
+- Slides: /fyc/
+- PDF: /artifacts/fyc.pdf
+
+Présentation globale de la formation Ingénierie des Infrastructures Web & Cloud.
+
 ## Ingénierie des Infrastructures Web & Cloud — Validation du sujet
 
 - Slug: fyc-validation
