@@ -5,7 +5,7 @@ Présentation globale de la formation Ingénierie des Infrastructures Web & Clou
 ## Metadata
 
 - Slug: fyc
-- Status: draft
+- Status: ready
 - Date: 2026-07-10
 - Language: fr
 - Event: Ingénierie des Infrastructures Web & Cloud
