@@ -1,30 +1,16 @@
-# Ingénierie des Infrastructures Web & Cloud
+# Déployer une API à différentes échelles
 
-Présentation globale de la formation Ingénierie des Infrastructures Web & Cloud.
+Présentation synthétique du parcours, de l’équipe et du fil rouge `demo-fyc-api`.
 
-## Metadata
+- Statut : ready
+- Événement : Déployer une API à différentes échelles
+- Dossier : `talks/fyc`
 
-- Slug: fyc
-- Status: ready
-- Date: 2026-07-10
-- Language: fr
-- Event: Ingénierie des Infrastructures Web & Cloud
+## Parcours
 
-## Links
+Le deck tient en 8 slides : équipe, objectif, syllabus, progression, dépôt fil rouge et résultats attendus.
 
-- Slides: /talks/fyc/
-- PDF: /artifacts/fyc.pdf
-- Source: talks/fyc/slides.md
+## Fil rouge
 
-## Structure
-
-- `slides.md`: métadonnées du talk et ordre d'assemblage Slidev.
-- `chapters/`: contenu éditorial découpé par chapitre.
-
-## Commands
-
-```bash
-pnpm dev -- fyc
-pnpm build -- fyc
-pnpm export -- fyc
-```
+- Dépôt : https://github.com/rchrdkvcs/demo-fyc-api
+- Stack : AdonisJS / TypeScript + PostgreSQL

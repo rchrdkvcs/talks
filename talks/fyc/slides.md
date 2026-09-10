@@ -1,11 +1,11 @@
 ---
 theme: default
-title: Ingénierie des Infrastructures Web & Cloud
+title: Déployer une API à différentes échelles
 slug: fyc
-event: Ingénierie des Infrastructures Web & Cloud
+event: Déployer une API à différentes échelles
 date: 2026-07-10
 lang: fr
-description: Présentation globale de la formation Ingénierie des Infrastructures Web & Cloud.
+description: Présentation synthétique du parcours, de l'équipe et du fil rouge demo-fyc-api.
 status: ready
 tags:
   - web
@@ -24,33 +24,33 @@ fonts:
   serif: Bodoni Moda
 layout: cover
 glowSeed: fyc
-src: ./chapters/00-cover.md
+src: ./chapters/short/00-cover.md
 ---
 
 ---
-src: ./chapters/01-syllabus-equipe.md
+src: ./chapters/short/01-equipe.md
 ---
 
 ---
-src: ./chapters/01-introduction.md
+src: ./chapters/short/02-objectif.md
 ---
 
 ---
-src: ./chapters/02-contexte.md
+src: ./chapters/short/03-syllabus.md
 ---
 
 ---
-src: ./chapters/03-parcours.md
+src: ./chapters/short/04-progression.md
 ---
 
 ---
-src: ./chapters/04-modules.md
+src: ./chapters/short/05-fil-rouge.md
 ---
 
 ---
-src: ./chapters/05-tp.md
+src: ./chapters/short/06-resultats.md
 ---
 
 ---
-src: ./chapters/06-conclusion.md
+src: ./chapters/short/07-conclusion.md
 ---
