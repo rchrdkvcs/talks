@@ -28,6 +28,10 @@ src: ./chapters/00-cover.md
 ---
 
 ---
+src: ./chapters/01-syllabus-equipe.md
+---
+
+---
 src: ./chapters/01-introduction.md
 ---
 
