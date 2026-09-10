@@ -1,89 +1,42 @@
 [
   {
     "slug": "losyma",
-    "title": "Losyma — architecture d’un webmail Symfony",
-    "description": "Architecture technique d’un webmail interne construit avec Symfony, Twig, Doctrine et Mercure.",
+    "path": "/losyma/",
+    "title": "Lös y más",
+    "event": "Lös y más",
+    "date": "2026-07-10",
+    "description": "Talk Losyma",
     "status": "ready",
-    "date": "2026-07-29",
-    "lang": "fr",
-    "event": "Framework Symfony · ESGI 4",
-    "speaker": null,
-    "venue": null,
-    "duration": null,
-    "tags": [
-      "doctrine",
-      "mercure",
-      "symfony",
-      "twig"
-    ],
-    "links": {
-      "slides": "/losyma/",
-      "pdf": "/artifacts/losyma.pdf",
-      "source": "talks/losyma/slides.md"
-    }
+    "tags": ["architecture", "web"]
   },
   {
     "slug": "fyc",
-    "title": "Ingénierie des Infrastructures Web & Cloud",
-    "description": "Présentation globale de la formation Ingénierie des Infrastructures Web & Cloud.",
-    "status": "ready",
+    "path": "/fyc/",
+    "title": "Déployer une API à différentes échelles",
+    "event": "Déployer une API à différentes échelles",
     "date": "2026-07-10",
-    "lang": "fr",
-    "event": "Ingénierie des Infrastructures Web & Cloud",
-    "speaker": null,
-    "venue": null,
-    "duration": null,
-    "tags": [
-      "cloud",
-      "formation",
-      "infrastructure",
-      "web"
-    ],
-    "links": {
-      "slides": "/fyc/",
-      "pdf": "/artifacts/fyc.pdf",
-      "source": "talks/fyc/slides.md"
-    }
+    "description": "Présentation synthétique du parcours, de l'équipe et du fil rouge demo-fyc-api.",
+    "status": "ready",
+    "tags": ["web", "cloud", "infrastructure", "formation"]
   },
   {
     "slug": "fyc-validation",
-    "title": "Ingénierie des Infrastructures Web & Cloud — Validation du sujet",
-    "description": "Pitch de validation du sujet de la formation Ingénierie des Infrastructures Web & Cloud.",
-    "status": "ready",
+    "path": "/fyc-validation/",
+    "title": "Validation FYC",
+    "event": "Validation FYC",
     "date": "2026-07-10",
-    "lang": "fr",
-    "event": "FYC",
-    "speaker": null,
-    "venue": null,
-    "duration": null,
-    "tags": [
-      "cloud",
-      "formation",
-      "infrastructure",
-      "web"
-    ],
-    "links": {
-      "slides": "/fyc-validation/",
-      "pdf": "/artifacts/fyc-validation.pdf",
-      "source": "talks/fyc-validation/slides.md"
-    }
+    "description": "Validation FYC",
+    "status": "ready",
+    "tags": ["web", "cloud", "infrastructure"]
   },
   {
     "slug": "example-talk",
-    "title": "Base complete Slidev",
-    "description": "Deck de reference montrant plusieurs types de slides, contenus, medias et visualisations.",
+    "path": "/example-talk/",
+    "title": "Example Talk",
+    "event": "Example Talk",
+    "date": "2026-07-10",
+    "description": "Example Talk",
     "status": "ready",
-    "date": "2026-06-16",
-    "lang": "fr",
-    "event": "Local rehearsal",
-    "speaker": null,
-    "venue": null,
-    "duration": null,
-    "tags": [],
-    "links": {
-      "slides": "/example-talk/",
-      "pdf": "/artifacts/example-talk.pdf",
-      "source": "talks/example-talk/slides.md"
-    }
+    "tags": ["example"]
   }
 ]
