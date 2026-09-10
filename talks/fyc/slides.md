@@ -6,7 +6,7 @@ event: Ingénierie des Infrastructures Web & Cloud
 date: 2026-07-10
 lang: fr
 description: Présentation globale de la formation Ingénierie des Infrastructures Web & Cloud.
-status: draft
+status: ready
 tags:
   - web
   - cloud
