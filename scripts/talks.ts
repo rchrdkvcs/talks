@@ -31,7 +31,7 @@ Commands:
   sync       Regenerate Talk READMEs and catalog files
   catalog    Regenerate structured and Markdown catalog files
   dev        Run one Talk locally
-  build      Build one Talk, or all ready Talks when no slug is given
+  build      Build slides and PDFs for one Talk, or all ready Talks when no slug is given
   export     Export one Talk PDF, or all ready Talks with --yes
   publish    Build catalog, all ready Talks, and PDF artifacts
   new        Create a Talk from a template
