@@ -60,8 +60,9 @@ reveals expanded (without separate pages for each animation).
 
 PDF export requires Playwright Chromium, installed by `playwright-chromium` during
 `pnpm install`. On Cloudflare Workers Builds (`WORKERS_CI=1`), the talk manager
-also runs `pnpm exec playwright install --with-deps chromium` once before the
-first PDF export to install the Linux libraries missing from the build image.
+downloads and extracts signed Ubuntu packages into `node_modules/.cache/pdf-browser`
+before the first PDF export. Only the export process receives the private library
+path. This needs neither sudo nor a root password and does not install system packages.
 No change to the Cloudflare build command is needed.
 
 If browser installation was skipped locally, run
