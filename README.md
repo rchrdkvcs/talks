@@ -69,3 +69,15 @@ If browser installation was skipped locally, run
 `pnpm exec playwright install chromium`. On a Linux machine missing browser system
 libraries, install them with `pnpm exec playwright install-deps chromium`.
 An export failure fails the build so a deployment cannot silently ship missing PDFs.
+
+To regression-test the Cloudflare library setup with real APT and no root privileges
+(requires Docker; downloads Ubuntu packages):
+
+```sh
+docker run --rm --platform linux/amd64 --user 1000:1000 \
+  -v "$PWD/scripts:/scripts:ro" ubuntu:24.04 \
+  bash /scripts/tests/prepare-chromium.sh
+```
+
+The test checks that browser libraries are extracted without changing the system
+package database or bundling a replacement libc.

@@ -21,7 +21,9 @@ EOF
 # Keep Ubuntu's configured repositories and signature checks. All writable APT
 # state is private; the host dpkg status is only read to resolve missing deps.
 apt-get -c "$prefix/apt/config" -o APT::Update::Error-Mode=any update
-apt-get -c "$prefix/apt/config" --download-only --reinstall --no-install-recommends --assume-yes install \
+# Even --download-only takes dpkg locks next to the system status file. Disable
+# locking only for this download: no packages are installed and the cache is private.
+apt-get -c "$prefix/apt/config" -o Debug::NoLocking=true --download-only --reinstall --no-install-recommends --assume-yes install \
   libasound2t64 libatk-bridge2.0-0t64 libatk1.0-0t64 libatspi2.0-0t64 \
   libcairo2 libcups2t64 libdbus-1-3 libdrm2 libgbm1 libglib2.0-0t64 \
   libnspr4 libnss3 libpango-1.0-0 libx11-6 libxcb1 libxcomposite1 \
