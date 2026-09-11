@@ -59,7 +59,12 @@ per-slide export to preserve backgrounds, with one page per slide and click
 reveals expanded (without separate pages for each animation).
 
 PDF export requires Playwright Chromium, installed by `playwright-chromium` during
-`pnpm install`. If browser installation was skipped, run
+`pnpm install`. On Cloudflare Workers Builds (`WORKERS_CI=1`), the talk manager
+also runs `pnpm exec playwright install --with-deps chromium` once before the
+first PDF export to install the Linux libraries missing from the build image.
+No change to the Cloudflare build command is needed.
+
+If browser installation was skipped locally, run
 `pnpm exec playwright install chromium`. On a Linux machine missing browser system
 libraries, install them with `pnpm exec playwright install-deps chromium`.
 An export failure fails the build so a deployment cannot silently ship missing PDFs.
