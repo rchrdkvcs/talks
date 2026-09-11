@@ -46,3 +46,20 @@ pnpm new my-talk-slug --title "My Talk" --event "My Event" --date 2026-11-06 --l
 - Talk-specific components and media stay inside their talk folder.
 - Public paths are derived as `/{talk-slug}/`.
 - PDF artifacts are exported to `dist/artifacts/{talk-slug}.pdf`.
+
+## PDF downloads and deployment
+
+`pnpm build` generates the homepage, slides, and a PDF for every ready talk.
+`pnpm build -- <slug>` builds the slides and PDF for one talk; `pnpm publish`
+is an alias for the full build. Deploy the complete `dist/` directory, including
+`dist/artifacts/`. Cloudflare can keep using `pnpm build` as its build command.
+
+The homepage PDF button downloads the generated file directly. PDFs use Slidev's
+per-slide export to preserve backgrounds, with one page per slide and click
+reveals expanded (without separate pages for each animation).
+
+PDF export requires Playwright Chromium, installed by `playwright-chromium` during
+`pnpm install`. If browser installation was skipped, run
+`pnpm exec playwright install chromium`. On a Linux machine missing browser system
+libraries, install them with `pnpm exec playwright install-deps chromium`.
+An export failure fails the build so a deployment cannot silently ship missing PDFs.

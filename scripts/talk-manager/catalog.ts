@@ -219,7 +219,7 @@ export async function generateWebIndex(talks: Talk[]) {
               <p class="talk-description">${talk.description}</p>
               <div class="talk-links">
                 <a href="${talk.links.slides}">Voir</a>
-                <a href="${talk.links.pdf}">PDF</a>
+                <a href="${talk.links.pdf}" download="${talk.slug}.pdf" type="application/pdf">PDF</a>
               </div>
             </div>
           </div>

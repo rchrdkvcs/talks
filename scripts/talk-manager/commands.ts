@@ -21,7 +21,9 @@ export async function buildCommand(args: string[]) {
   const talks = selectPublicTalks(await loadValidTalks())
 
   if (options.slug) {
-    await buildTalk(await pickTalk(talks, options))
+    const talk = await pickTalk(talks, options)
+    await buildTalk(talk)
+    await exportTalk(talk)
     return
   }
 
@@ -29,8 +31,10 @@ export async function buildCommand(args: string[]) {
   await generateCatalog(talks, true)
   await generateWebIndex(talks)
 
-  for (const talk of talks)
+  for (const talk of talks) {
     await buildTalk(talk)
+    await exportTalk(talk)
+  }
 }
 
 export async function exportCommand(args: string[]) {
@@ -70,16 +74,7 @@ export async function catalogCommand(args: string[]) {
 }
 
 export async function publishCommand() {
-  const talks = selectPublicTalks(await loadValidTalks())
-
-  await fs.rm(distDir, { recursive: true, force: true })
-  await generateCatalog(talks, true)
-  await generateWebIndex(talks)
-
-  for (const talk of talks) {
-    await buildTalk(talk)
-    await exportTalk(talk)
-  }
+  await buildCommand([])
 }
 
 export async function validateCommand() {
