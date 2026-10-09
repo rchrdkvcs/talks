@@ -2,41 +2,32 @@
 glow: right
 ---
 
-# Le syllabus
+# Module 1 · Hébergement & conteneurisation
 
-<div flex="~ col gap-5" mt-8 text-xl>
-  <div flex gap-5 items-start>
-    <div text-blue-600 font-mono>01</div>
-    <div class="flex-1">
-      <div>Hébergement & conteneurisation</div>
-      <div op50 text-base>VM, Dockerfile, Compose, registre, déploiement VPS</div>
-    </div>
-    <div text-lime-600 text-sm>✓ contenu + quiz</div>
+<div op50 text-base mt-1>Un même service, du choix du serveur à sa mise en ligne</div>
+
+<div grid="~ cols-3 gap-5" mt-8>
+  <div class="rounded-xl border border-blue-200 p-5">
+    <div text-blue-600 text-sm tracking-widest>1.1 · 45 MIN</div>
+    <div text-xl mt-3>Choisir le socle</div>
+    <div op70 text-base mt-3>Bare metal, VPS ou cloud : comparer contrôle, flexibilité et coût.</div>
+    <div op50 text-sm mt-3>VM ≠ conteneur</div>
   </div>
-  <div flex gap-5 items-start>
-    <div text-lime-600 font-mono>02</div>
-    <div class="flex-1">
-      <div>Haute disponibilité & orchestration</div>
-      <div op50 text-base>Swarm, Kubernetes, services, probes, auto-réparation</div>
-    </div>
-    <div text-lime-600 text-sm>✓ contenu + quiz</div>
+  <div class="rounded-xl border border-lime-200 p-5">
+    <div text-lime-600 text-sm tracking-widest>1.2 · 1 H 30</div>
+    <div text-xl mt-3>Construire la stack</div>
+    <div op70 text-base mt-3>Image et Dockerfile, puis API + PostgreSQL avec Compose.</div>
+    <div op50 text-sm mt-3>Couches · réseau · volume</div>
   </div>
-  <div flex gap-5 items-start>
-    <div text-amber-600 font-mono>03</div>
-    <div class="flex-1">
-      <div>Cloud, stockage & auto-scaling</div>
-      <div op50 text-base>Cluster managé, persistance, HPA, opérateur PostgreSQL</div>
-    </div>
-    <div text-lime-600 text-sm>✓ contenu + quiz</div>
-  </div>
-  <div flex gap-5 items-start>
-    <div text-purple-600 font-mono>04</div>
-    <div class="flex-1">
-      <div>Automatisation & GitOps</div>
-      <div op50 text-base>Terraform / OpenTofu, Ansible, Kustomize, Argo CD / Flux</div>
-    </div>
-    <div text-lime-600 text-sm>✓ contenu + quiz</div>
+  <div class="rounded-xl border border-amber-200 p-5">
+    <div text-amber-600 text-sm tracking-widest>1.3 · 1 H 30</div>
+    <div text-xl mt-3>Publier et déployer</div>
+    <div op70 text-base mt-3>Registre, VPS, reverse proxy Nginx et certificat TLS.</div>
+    <div op50 text-sm mt-3>Repérer le point de défaillance unique</div>
   </div>
 </div>
 
-<div op50 text-sm mt-6>✓ = page de module et quiz repérables dans Notion</div>
+<div flex="~ justify-between items-center" mt-7>
+  <div op70 text-base>3 h 45 de contenu scénarisé · environ 29 % d’un parcours indicatif de 13 h</div>
+  <div op50 text-sm>Repères : 1.1 → 1.6</div>
+</div>
