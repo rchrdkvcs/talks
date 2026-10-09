@@ -6,17 +6,17 @@ glow: left
 
 <div grid="~ cols-2 gap-x-12 gap-y-5" mt-8 text-lg>
   <div>
-    <div text-lime-600>✓ Repérable dans Notion</div>
-    <div op75 mt-2>4 modules et leurs quiz</div>
-    <div op75>Scénarisation et bibliographie</div>
-    <div op75>Checkpoints du fil rouge</div>
+    <div text-lime-600>✓ Déjà repérable dans Notion</div>
+    <div op75 mt-2>4 modules, quiz et scénarisation</div>
+    <div op75>Module 1 : quiz, corrigé et schéma pédagogique</div>
+    <div op75>Bibliographie et checkpoints du fil rouge</div>
     <div op75>Scripts vidéo des modules 1 et 2</div>
   </div>
   <div>
     <div text-amber-600>◐ À valider ou compléter</div>
     <div op75 mt-2>Test de positionnement · première version</div>
     <div op75>Scripts vidéo des modules 3 et 4</div>
-    <div op75>Consignes, traces et corrigés des exercices / TP</div>
+    <div op75>Fiches de rendu et corrigés des TP</div>
     <div op75>Vidéos finales et dépôt sur Moodle</div>
   </div>
 </div>
