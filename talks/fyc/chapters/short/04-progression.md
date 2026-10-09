@@ -3,15 +3,25 @@ layout: center
 glow: bottom
 ---
 
-<div op50 text-lg mb-3>Le parcours · 10 à 15 h</div>
+<div op50 text-lg mb-3>Module 1 · mise en pratique</div>
 
-# Une même API, plusieurs échelles
+# Deux TP, une même API
 
-<div flex="~ col gap-4" mt-8 text-xl>
-  <div><span text-blue-600>01 · Local & VPS</span><span op50> · image, Compose, registre, Nginx et TLS</span><span text-lime-600 ml-3>✓ 1.1–1.6</span></div>
-  <div><span text-lime-600>02 · Kubernetes local</span><span op50> · orchestration et recréation d’un Pod</span><span text-lime-600 ml-3>✓ 2.1–2.2</span></div>
-  <div><span text-amber-600>03 · Cloud</span><span op50> · cluster managé, persistance et autoscaling</span><span text-lime-600 ml-3>✓ 3.1–3.3</span></div>
-  <div><span text-purple-600>04 · GitOps</span><span op50> · IaC, environnements et réconciliation</span><span text-lime-600 ml-3>✓ 4.1–4.3.1</span></div>
+<div grid="~ cols-2 gap-10" mt-7>
+  <div class="rounded-xl border border-lime-200 p-5">
+    <div text-lime-600 text-sm tracking-widest>TP1 · CHECKPOINT 1.4</div>
+    <div text-2xl mt-2>La stack locale</div>
+    <div op70 text-base mt-3>API AdonisJS + PostgreSQL avec Docker Compose</div>
+    <div mt-4 text-base>1. Démarrer les services<br>2. Vérifier <code>/ready</code><br>3. Redémarrer et contrôler la persistance</div>
+    <div op50 text-sm mt-4>Trace : commandes et résultats des contrôles</div>
+  </div>
+  <div class="rounded-xl border border-amber-200 p-5">
+    <div text-amber-600 text-sm tracking-widest>TP2 · CHECKPOINT 1.6</div>
+    <div text-2xl mt-2>Le déploiement VPS</div>
+    <div op70 text-base mt-3>Image publiée, reverse proxy Nginx et TLS</div>
+    <div mt-4 text-base>1. Déployer l’image du registre<br>2. Tester l’accès HTTPS<br>3. Provoquer une panne et en mesurer l’impact</div>
+    <div op50 text-sm mt-4>Trace : configuration, tests HTTP et analyse de panne</div>
+  </div>
 </div>
 
-<div op50 text-sm mt-6>✓ = checkpoints publiés dans le dépôt fil rouge, d’après la cartographie Notion</div>
+<div op50 text-sm mt-5>Activités présentes dans Notion · fiches de rendu et corrigés à finaliser</div>
